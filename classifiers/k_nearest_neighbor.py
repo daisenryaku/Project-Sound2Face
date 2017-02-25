@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 
 class KNearestNeighbor(object):
@@ -56,3 +57,17 @@ class KNearestNeighbor(object):
     y2 = np.sum(self.X_train**2,axis=1).reshape(num_train,1)
     dists = np.sqrt( x2 + xy + y2.T )
     return dists
+
+  def score(self, X_test, y_test, k=1):
+    """
+    检验模型准确度
+    Inputs:
+    - X_test: 一个[num_test, D]的numpy数组，包含测试集数据
+    - y_test: 一个[num_test, D]的numpy数组，包含测试集数据标记
+    - k: knn中的超参数k
+    """
+    y_test_pred = self.predict(X_test,k=k)
+    num_test = y_test.shape[0]
+    num_correct = np.sum(y_test_pred == y_test)
+    accuracy = float(num_correct) / num_test
+    print 'Got %d / %d correct => accuracy: %f' % (num_correct, num_test, accuracy)
