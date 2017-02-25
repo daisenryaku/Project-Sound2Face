@@ -25,7 +25,7 @@ class KNearestNeighbor(object):
     对测试集产生预测输出
 
     Inputs:
-    - X：一个[num_test, D]的numpy数组; num_train:测试样本个数，D：样本元素维度
+    - X：一个[num_train, D]的numpy数组; num_train:测试样本个数，D：样本元素维度
     - k: 近邻个数，即knn算法中超参数k
 
     Returns:
