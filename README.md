@@ -7,6 +7,13 @@ from classifiers.cross_validation import train_test_split
 iris = datasets.load_iris()
 X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.25)
 ```
+## Logistic回归
+```python
+from classifiers.logistic_classifier import LogisticClassifier
+model = LogisticClassifier()
+model.train(X_train, y_train, learning_rate=1e-3, num_iters=10000, batch_size=20)
+model.score(X_test, y_test)
+```
 
 ## knn 使用实例
 ```python

@@ -56,7 +56,6 @@ class LinearClassifier(object):
     Returns:
     - y: 一个[num_test,]的numpy数组，包含对x的预测输出标记
     """
-    y_pred = np.zeros(X.shape[1])
     y_pred = np.argmax( np.dot(X, self.W) ,axis=1)
     return y_pred
 
