@@ -2,10 +2,10 @@
 
 ## 实例数据
 ```python
-from sklearn import datasets
+from datasets import load_breast_cancer
 from classifiers.cross_validation import train_test_split
-iris = datasets.load_iris()
-X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.25)
+bc = load_breast_cancer()
+X_train, X_test, y_train, y_test = train_test_split(bc.data, bc.target, test_size=0.25)
 ```
 ## Logistic回归
 ```python
