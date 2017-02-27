@@ -29,7 +29,7 @@ def load_data(module_path, data_file_name):
         temp = next(data_file)
         n_samples = int(temp[0])
         n_features = int(temp[1])
-        
+
         data = np.empty((n_samples, n_features))
         target = np.empty((n_samples,), dtype=np.int)
 
@@ -44,3 +44,7 @@ def load_breast_cancer():
     data, target = load_data(module_path, 'breast_cancer.csv')
     return Bunch(data=data, target=target)
 
+def load_features():
+    module_path = dirname(__file__)
+    data, target = load_data(module_path, 'features.csv')
+    return Bunch(data=data, target=target)
